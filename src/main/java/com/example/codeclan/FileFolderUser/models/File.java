@@ -64,4 +64,12 @@ public class File {
     public void setSize(double size) {
         this.size = size;
     }
+
+    public Folder getFolder() {
+        return folder;
+    }
+
+    public void setFolder(Folder folder) {
+        this.folder = folder;
+    }
 }
