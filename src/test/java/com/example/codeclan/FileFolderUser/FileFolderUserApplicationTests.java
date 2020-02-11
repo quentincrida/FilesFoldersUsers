@@ -1,6 +1,7 @@
 package com.example.codeclan.FileFolderUser;
 
 import com.example.codeclan.FileFolderUser.models.File;
+import com.example.codeclan.FileFolderUser.models.Folder;
 import com.example.codeclan.FileFolderUser.repositories.FileRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,11 @@ class FileFolderUserApplicationTests {
 
 	@Test
 	public void canCreateAndSaveFileObjects(){
-		File file = new File("CTB", ".doc", 100.00);
+
+		Folder folder = new Folder("Trustees Minutes");
+		folderRepository.
+
+		File file = new File("CTB", ".doc", 100.00, folder);
 		fileRepository.save(file);
 	}
 
