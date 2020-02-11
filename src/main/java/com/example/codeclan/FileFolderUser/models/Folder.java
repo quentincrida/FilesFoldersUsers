@@ -21,9 +21,15 @@ public class Folder {
     @OneToMany(mappedBy = "folder")
     private List<File> files;
 
-    public Folder(String title) {
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public Folder(String title, User user) {
         this.title = title;
         this.files = new ArrayList<>();
+        this.user = user;
     }
 
     public Folder() {
@@ -51,5 +57,13 @@ public class Folder {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
